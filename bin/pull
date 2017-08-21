@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo 'Pulling repositories....'
+
+function pull_repo() {
+  local original_dir=`pwd`
+  echo "Pulling from $1"
+  cd "../$1"
+  git checkout development || git checkout master
+  git pull --rebase --autostash
+  git checkout -
+  cd "$original_dir"
+  return
+}
+
+pull_repo 'link2-server'
+pull_repo 'link2-screenshot'
+
+unset pull_repo
