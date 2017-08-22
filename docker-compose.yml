@@ -12,6 +12,7 @@ services:
       - 3000:3000
     volumes:
       - ../link2-server:/usr/src/app
+      - screenshots:/usr/src/app/public/screenshots
     links:
       - screenshot:screenshot
     depends_on:
@@ -27,7 +28,7 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - ../link2-screenshot/public:/usr/src/app/public
+      - screenshots:/usr/src/app/public
       - npm-cache:/usr/src/app/node_modules
 
   elasticsearch:
@@ -41,3 +42,4 @@ services:
 volumes:
   esdata:
   npm-cache:
+  screenshots:
