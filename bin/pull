@@ -15,5 +15,6 @@ function pull_repo() {
 
 pull_repo 'link2-server'
 pull_repo 'link2-screenshot'
+pull_repo 'link2-client'
 
 unset pull_repo

@@ -3,4 +3,5 @@
 echo 'Cloning repositories....'
 
 git clone git@github.com:tommyku/link2-server.git ../link2-server
+git clone git@github.com:tommyku/link2-client.git ../link2-client
 git clone git@github.com:tommyku/link2-screenshot.git ../link2-screenshot
