@@ -13,6 +13,7 @@ services:
     volumes:
       - ../link2-server:/usr/src/app
       - screenshots:/usr/src/app/public/screenshots
+      - gem-cache:/gem
     links:
       - screenshot:screenshot
     depends_on:
@@ -44,3 +45,4 @@ volumes:
   esdata:
   npm-cache:
   screenshots:
+  gem-cache:
