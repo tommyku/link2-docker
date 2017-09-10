@@ -30,16 +30,16 @@ services:
       - 8080:8080
     volumes:
       - screenshots:/usr/src/app/public
-      - npm-cache:/usr/src/app/node_modules
+      - npm-cache-screenshot:/usr/src/app/node_modules
 
   client:
     image: node:8.4.0-alpine
-    command: "sh -c 'cd /usr/src/app && yarn && PORT=3001 yarn start'"
+    command: "ash -c 'cd /usr/src/app && yarn && PORT=3001 yarn start'"
     ports:
       - 3001:3001
     volumes:
       - ../link2-client:/usr/src/app
-      - npm-cache:/usr/src/app/node_modules
+      - npm-cache-client:/usr/src/app/node_modules
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:5.5.1
@@ -52,6 +52,7 @@ services:
       - esdata:/usr/share/elasticsearch/data
 volumes:
   esdata:
-  npm-cache:
+  npm-cache-screenshot:
+  npm-cache-client:
   screenshots:
   gem-cache:
